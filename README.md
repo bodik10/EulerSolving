@@ -1,8 +1,8 @@
 EulerSolving
 ============
 
-This is my solutions for Euler Problems (http://projecteuler.net). 
+This is my Python3 solutions for Euler Problems (http://projecteuler.net). 
 
-But beware! A solving I've been collecting here produce correct answers. 
+But beware! A solving I've been collecting here produces correct answers. 
 
 So if you want to solve problems by yourself just pass through :-)
