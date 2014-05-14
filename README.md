@@ -1,7 +1,7 @@
 EulerSolving
 ============
 
-This is my Python3 solutions for Euler Problems (http://projecteuler.net). 
+This is my Python3 solutions for Euler Problems (http://projecteuler.net)
 
 But beware! A solving I've been collecting here produces correct answers. 
 
