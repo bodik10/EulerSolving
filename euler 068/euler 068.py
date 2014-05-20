@@ -42,14 +42,9 @@ for comb in permutations(range(1, N*2+1)):
     for i in range(1, N+1):
         N_gon[i-1].linkto(N_gon[i%N])
         outer[i-1].linkto(N_gon[i-1])
-<<<<<<< HEAD
-    sums = [node.sum() for node in outer]   # sums of each line 
-    if sums[1:] == sums[:-1]:               # if sum of each line are equal
-        print (sums[0], outer)
-=======
+        
     sums = [node.sum() for node in outer]
-
-    if len(set(sums)) == 1:
+    if sums[1:] == sums[:-1]:
         # group = [node.toTuple() for node in outer]
         group = [node.toStr() for node in outer]
         
@@ -67,6 +62,5 @@ for sums, group in result.items():
     concat = concat_group(group)
     if concat > maximum:
         maximum = concat
->>>>>>> 674c38d3cdfb806772280d0aee9a40ab0320e6a1
 
 print ("Maximun string for a 'magic' %d-gon: %d" % (N, maximum))
