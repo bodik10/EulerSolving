@@ -23,7 +23,7 @@ for comb in allcomb:
     for i in range(1, N+1):
         N_gon[i-1].linkto(N_gon[i%N])
         outer[i-1].linkto(N_gon[i-1])
-    sums = [node.sum() for node in outer]
-    if len(set(sums)) == 1:
+    sums = [node.sum() for node in outer]   # sums of each line 
+    if sums[1:] == sums[:-1]:               # if sum of each line are equal
         print (sums[0], outer)
 
