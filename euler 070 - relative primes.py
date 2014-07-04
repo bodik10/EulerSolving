@@ -13,6 +13,13 @@ def phi(n): # Euler's Totient function (see details in Problem 069)
     n -= 1
     return n*ret if n else ret
 
+def genPrimeDESC(top):
+    for n in range(top,2,-1):
+        for i in range(2, int(n**0.5 + 1)):
+            if n%i == 0: break
+        else:
+            yield n
+
 def is_perm(n1, n2):
     def countdict(n):
         return {k:n.count(k) for k in n}
@@ -20,14 +27,20 @@ def is_perm(n1, n2):
     return countdict(n1) == countdict(n2)
 
 # solving problem
-max, maxN, maxP = 0, 0, 0
+min, N, P = 5, 0, 0
 
-for n in range(1,10**7):
+for n in range(10**6,10**7):
     p = int(phi(n))
-    if is_perm(n, p) and n/p > max:
-        max, maxN, maxP = n/p, n, p
+    if is_perm(n, p) and n/p < min:
+        min, N, P = n/p, n, p
+"""
+for n in genPrimeDESC(10**6):
+    phi = n - 1
+    if is_perm(n, phi) and n/phi < min:
+        min, N, P = n/p, n, phi
+"""
 
-print ("n=%d for which φ(n)=%d is a permutation of n and n/φ(n)=%.5f is a maximum" % (maxN, maxP, max))
+print ("n=%d for which φ(n)=%d is a permutation of n and n/φ(n)=%.5f is a minimum" % (N, P, min))
 
 # The answer (after pretty long time of calculation) is:
-# n=602910 for which φ(n)=120960 is a permutation of n and n/φ(n)=4.98438 is a maximum
+# n=8319823 for which φ(n)=8313928 is a permutation of n and n/φ(n)=1.00071 is a minimum
