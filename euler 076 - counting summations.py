@@ -1,30 +1,19 @@
 "How many different ways can number be written as a sum of at least two positive integers?"
 
+# much the same solution as in problem 031
+
 def counting_summations(N):
-    count = 0
-    index = 0
-    summands = [N]
-    while len(summands) != N:
-        if summands[index] == 1:
-            index -= 1
-            continue
 
-        summands[index] -= 1
-        
-        if index+1 > len(summands)-1:
-            summands.append(0)
-        if summands[index] < summands[index+1] +1:
-            summands.append(1)
-            index -= 1
-        else:
-            index += 1
-            summands[index] += 1
-        
-        count += 1
+    ways = [1] + [0]*N
 
-        print(summands, index); input()
+    for n in range(1, N):
+        for i in range(n, N+1):
+            ways[i] += ways[i-n]
+            print(ways); input()
 
-    return count
+    return ways[N]
 
-#print(counting_summations(5))
+print(counting_summations(5))
+print(counting_summations(4))
+print(counting_summations(7))
 print(counting_summations(100))
