@@ -33,6 +33,5 @@ with myprofiler.profile():
     
 print (len(result))
 
-print (dict(result[0]))
-print (dict(result[resultAll//2]))
-print (dict(result[-1]))
+for res in result:
+    print(dict(res))
