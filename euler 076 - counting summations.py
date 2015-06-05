@@ -22,12 +22,16 @@ def find_summations(N):
                 newSet = currentSet.copy()
                 newSet[n] += 1
                 summs(need, newSet)
-
     summs(N)
+    return result
+def output(set):
+    result = []
+    for num, count in set.items():
+        result.extend([num] * count)
     return result
 
 for set in find_summations(5):
-    print(dict(set))
+    print(output(set))
 
     
 def counting_summations(N):
