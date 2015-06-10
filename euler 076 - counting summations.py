@@ -46,4 +46,5 @@ def counting_summations(N):
 
 print(counting_summations(5))
 print(counting_summations(7))
+print(counting_summations(8))
 print(counting_summations(100))
